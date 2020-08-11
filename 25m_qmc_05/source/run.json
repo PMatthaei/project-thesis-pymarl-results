@@ -1,0 +1,90 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/pymarl/src",
+    "dependencies": [
+      "munch==2.5.1.dev12",
+      "numpy==1.18.5",
+      "PyYAML==5.3.1",
+      "sacred==0.7.2",
+      "torch==1.5.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_63d7d00072f4e5be0310acb11aa60581.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_75b4e4a81fa0c20369072b33acf9d2db.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_aa14e56e60b01dd7a9ddb8e6cdf36b85.py"
+      ]
+    ]
+  },
+  "fail_trace": [
+    "Traceback (most recent call last):\n",
+    "  File \"/usr/local/lib/python3.5/dist-packages/sacred-0.7.2-py3.5.egg/sacred/config/captured_function.py\", line 48, in captured_function\n    result = wrapped(*args, **kwargs)\n",
+    "  File \"src/main.py\", line 35, in my_main\n    run(_run, config, _log)\n",
+    "  File \"/pymarl/src/run.py\", line 48, in run\n    run_sequential(args=args, logger=logger)\n",
+    "  File \"/pymarl/src/run.py\", line 209, in run_sequential\n    runner.run(test_mode=True)\n",
+    "  File \"/pymarl/src/runners/episode_runner.py\", line 73, in run\n    rewards, terminated, env_info = self.env.step(actions[0])\n",
+    "  File \"/pymarl/src/envs/combined_rewards_smac.py\", line 235, in step\n    .format(diff).center(60, '-'))\n",
+    "  File \"/usr/local/lib/python3.5/dist-packages/numpy/testing/_private/utils.py\", line 601, in assert_almost_equal\n    raise AssertionError(_build_err_msg())\n",
+    "AssertionError: \nArrays are not almost equal to 10 decimals\nGlobal reward and local reward mean should be equal. Difference = 2.438095238095238\n ACTUAL: 2.5462857142857143\n DESIRED: 0.1081904761904762\n"
+  ],
+  "heartbeat": "2020-08-10T21:23:08.202163",
+  "host": {
+    "ENV": {},
+    "cpu": "Common KVM processor",
+    "hostname": "a9cd6cd5636e",
+    "os": [
+      "Linux",
+      "Linux-5.4.0-40-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=25m",
+        "env_args.reward_local=True",
+        "env_args.reward_local_weighted=True",
+        "save_model=True"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2020-08-10T15:15:40.523424",
+  "status": "FAILED",
+  "stop_time": "2020-08-10T21:23:08.238731"
+}

@@ -1,0 +1,557 @@
+[INFO 15:15:40] pymarl Running command 'my_main'
+[INFO 15:15:40] pymarl Started run with ID "3"
+[DEBUG 15:15:40] my_main Started
+[WARNING 15:15:40] my_main CUDA flag use_cuda was switched OFF automatically because no CUDA devices are available!
+[INFO 15:15:40] my_main Experiment Parameters:
+[INFO 15:15:40] my_main 
+
+{   'action_selector': 'epsilon_greedy',
+    'agent': 'rnn',
+    'agent_output_type': 'q',
+    'batch_size': 32,
+    'batch_size_run': 1,
+    'buffer_cpu_only': True,
+    'buffer_size': 5000,
+    'checkpoint_path': '',
+    'critic_lr': 0.0005,
+    'double_q': True,
+    'env': 'sc2',
+    'env_args': {   'continuing_episode': False,
+                    'debug': False,
+                    'difficulty': '7',
+                    'game_version': None,
+                    'heuristic_ai': False,
+                    'heuristic_rest': False,
+                    'local_reward_weight': 0.5,
+                    'map_name': '25m',
+                    'move_amount': 2,
+                    'obs_all_health': True,
+                    'obs_instead_of_state': False,
+                    'obs_last_action': False,
+                    'obs_own_health': True,
+                    'obs_pathing_grid': False,
+                    'obs_terrain_height': False,
+                    'obs_timestep_number': False,
+                    'replay_dir': '',
+                    'replay_prefix': '',
+                    'reward_death_value': 10,
+                    'reward_defeat': 0,
+                    'reward_local': True,
+                    'reward_local_weighted': True,
+                    'reward_negative_scale': 0.5,
+                    'reward_only_positive': True,
+                    'reward_scale': True,
+                    'reward_scale_rate': 20,
+                    'reward_sparse': False,
+                    'reward_win': 200,
+                    'seed': 557890026,
+                    'state_last_action': True,
+                    'state_timestep_number': False,
+                    'step_mul': 8},
+    'epsilon_anneal_time': 50000,
+    'epsilon_finish': 0.05,
+    'epsilon_start': 1.0,
+    'evaluate': False,
+    'gamma': 0.99,
+    'grad_norm_clip': 10,
+    'hypernet_embed': 64,
+    'hypernet_layers': 2,
+    'label': 'default_label',
+    'learner': 'q_learner',
+    'learner_log_interval': 10000,
+    'load_step': 0,
+    'local_results_path': 'results',
+    'log_interval': 10000,
+    'lr': 0.0005,
+    'mac': 'basic_mac',
+    'mixer': 'qmix',
+    'mixing_embed_dim': 32,
+    'name': 'qmix',
+    'obs_agent_id': True,
+    'obs_last_action': True,
+    'optim_alpha': 0.99,
+    'optim_eps': 1e-05,
+    'repeat_id': 1,
+    'rnn_hidden_dim': 64,
+    'runner': 'episode',
+    'runner_log_interval': 10000,
+    'save_model': True,
+    'save_model_interval': 2000000,
+    'save_replay': False,
+    'seed': 557890026,
+    't_max': 2050000,
+    'target_update_interval': 200,
+    'test_greedy': True,
+    'test_interval': 10000,
+    'test_nepisode': 32,
+    'use_cuda': False,
+    'use_tensorboard': False}
+
+[INFO 15:15:48] my_main Beginning training for 2050000 timesteps
+[INFO 15:15:49] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 24519 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-ejnkv71i/ -eglpath libEGL.so.1
+[INFO 15:15:50] absl Connecting to: ws://127.0.0.1:24519/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 24519 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-ejnkv71i/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 15:15:51] absl Connecting to: ws://127.0.0.1:24519/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:24519
+Startup Phase 3 complete. Ready for commands.
+[INFO 15:15:52] absl Connecting to: ws://127.0.0.1:24519/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+/pymarl/src/components/episode_buffer.py:120: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  v = th.tensor(v, dtype=dtype, device=self.device)
+[INFO 15:15:58] my_main t_env: 34 / 2050000
+[INFO 15:15:58] my_main Estimated time left: 34 minutes, 25 seconds. Time passed: 10 seconds
+[INFO 15:16:54] my_main Saving models to results/models/qmix__2020-08-10_15-15-40/34
+/usr/local/lib/python3.5/dist-packages/torch/storage.py:34: FutureWarning: pickle support for Storage will be removed in 1.5. Use `torch.save` instead
+  warnings.warn("pickle support for Storage will be removed in 1.5. Use `torch.save` instead", FutureWarning)
+[INFO 15:22:58] my_main Updated target network
+[INFO 15:25:28] my_main Recent Stats | t_env:      10005 | Episode:      284
+battle_won_mean:           0.0000	ep_length_mean:           34.0000	epsilon:                   1.0000	grad_norm:                 4.1429
+loss:                      0.2202	q_taken_mean:             -0.0044	return_mean:               2.5905	return_std:                0.0000
+target_mean:               0.0100	td_error_abs:              0.3638	test_battle_won_mean:      0.0000	test_ep_length_mean:      63.0625
+test_return_mean:          4.0750	test_return_std:           0.6612	
+[INFO 15:25:29] my_main t_env: 10034 / 2050000
+[INFO 15:25:29] my_main Estimated time left: 1 days, 8 hours, 21 minutes, 54 seconds. Time passed: 9 minutes, 41 seconds
+[INFO 15:29:17] my_main Updated target network
+[INFO 15:34:56] my_main Updated target network
+[INFO 15:35:47] my_main Recent Stats | t_env:      20024 | Episode:      631
+battle_won_mean:           0.0000	ep_length_mean:           34.6056	epsilon:                   0.8099	grad_norm:                 2.1290
+loss:                      0.1109	q_taken_mean:              0.0031	return_mean:               2.4637	return_std:                0.1985
+target_mean:               0.0100	td_error_abs:              0.1970	test_battle_won_mean:      0.0000	test_ep_length_mean:      56.9219
+test_return_mean:          5.6504	test_return_std:           0.8923	
+[INFO 15:35:49] my_main t_env: 20049 / 2050000
+[INFO 15:35:49] my_main Estimated time left: 1 days, 10 hours, 51 minutes, 22 seconds. Time passed: 20 minutes, 0 seconds
+[INFO 15:40:41] my_main Updated target network
+[INFO 15:46:15] my_main Updated target network
+[INFO 15:46:54] my_main Recent Stats | t_env:      30043 | Episode:     1022
+battle_won_mean:           0.0000	ep_length_mean:           32.6910	epsilon:                   0.6195	grad_norm:                 1.4751
+loss:                      0.0743	q_taken_mean:              0.0063	return_mean:               2.7962	return_std:                0.4035
+target_mean:               0.0105	td_error_abs:              0.1413	test_battle_won_mean:      0.0000	test_ep_length_mean:      47.0625
+test_return_mean:          6.8981	test_return_std:           0.7999	
+[INFO 15:46:55] my_main t_env: 30071 / 2050000
+[INFO 15:46:55] my_main Estimated time left: 1 days, 13 hours, 20 minutes, 24 seconds. Time passed: 31 minutes, 7 seconds
+[INFO 15:52:28] my_main Updated target network
+[INFO 15:57:04] my_main Recent Stats | t_env:      40060 | Episode:     1343
+battle_won_mean:           0.0000	ep_length_mean:           30.9262	epsilon:                   0.4292	grad_norm:                 1.1304
+loss:                      0.0560	q_taken_mean:              0.0075	return_mean:               3.2790	return_std:                0.5478
+target_mean:               0.0109	td_error_abs:              0.1113	test_battle_won_mean:      0.0000	test_ep_length_mean:      46.4922
+test_return_mean:          6.1668	test_return_std:           0.7978	
+[INFO 15:57:06] my_main t_env: 40089 / 2050000
+[INFO 15:57:06] my_main Estimated time left: 1 days, 10 hours, 43 seconds. Time passed: 41 minutes, 17 seconds
+[INFO 15:59:24] my_main Updated target network
+[INFO 16:05:52] my_main t_env: 50091 / 2050000
+[INFO 16:05:52] my_main Estimated time left: 1 days, 5 hours, 14 minutes, 55 seconds. Time passed: 50 minutes, 4 seconds
+[INFO 16:06:25] my_main Recent Stats | t_env:      50091 | Episode:     1557
+battle_won_mean:           0.0000	ep_length_mean:           33.5742	epsilon:                   0.0500	grad_norm:                 0.9326
+loss:                      0.0450	q_taken_mean:              0.0082	return_mean:               3.7601	return_std:                1.0414
+target_mean:               0.0111	td_error_abs:              0.0942	test_battle_won_mean:      0.0000	test_ep_length_mean:      45.1375
+test_return_mean:          5.9891	test_return_std:           1.3967	
+[INFO 16:08:39] my_main Updated target network
+RequestQuit command received.
+Closing Application...
+unable to parse websocket frame.
+[INFO 16:12:35] absl Shutdown gracefully.
+[INFO 16:12:35] absl Shutdown with return code: -15
+[INFO 16:12:36] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 22439 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-3m5w2bko/ -eglpath libEGL.so.1
+[INFO 16:12:36] absl Connecting to: ws://127.0.0.1:22439/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 22439 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-3m5w2bko/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 16:12:37] absl Connecting to: ws://127.0.0.1:22439/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:22439
+Startup Phase 3 complete. Ready for commands.
+[INFO 16:12:38] absl Connecting to: ws://127.0.0.1:22439/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+[INFO 16:17:07] my_main t_env: 60105 / 2050000
+[INFO 16:17:07] my_main Estimated time left: 1 days, 13 hours, 15 minutes, 15 seconds. Time passed: 1 hours, 1 minutes, 19 seconds
+[INFO 16:17:35] my_main Recent Stats | t_env:      60105 | Episode:     1768
+battle_won_mean:           0.0000	ep_length_mean:           36.0239	epsilon:                   0.0500	grad_norm:                 0.1180
+loss:                      0.0011	q_taken_mean:              0.0112	return_mean:               4.1962	return_std:                1.3179
+target_mean:               0.0113	td_error_abs:              0.0246	test_battle_won_mean:      0.0000	test_ep_length_mean:      43.3875
+test_return_mean:          5.5911	test_return_std:           1.6044	
+[INFO 16:19:24] my_main Updated target network
+[INFO 16:28:48] my_main t_env: 70122 / 2050000
+[INFO 16:28:48] my_main Estimated time left: 1 days, 14 hours, 28 minutes, 16 seconds. Time passed: 1 hours, 12 minutes, 59 seconds
+[INFO 16:29:20] my_main Recent Stats | t_env:      70122 | Episode:     1977
+battle_won_mean:           0.0000	ep_length_mean:           39.8372	epsilon:                   0.0500	grad_norm:                 0.1182
+loss:                      0.0009	q_taken_mean:              0.0118	return_mean:               4.5809	return_std:                1.5689
+target_mean:               0.0118	td_error_abs:              0.0230	test_battle_won_mean:      0.0000	test_ep_length_mean:      49.5812
+test_return_mean:          4.7279	test_return_std:           1.8322	
+[INFO 16:30:41] my_main Updated target network
+[INFO 16:40:22] my_main t_env: 80144 / 2050000
+[INFO 16:40:22] my_main Estimated time left: 1 days, 13 hours, 52 minutes, 48 seconds. Time passed: 1 hours, 24 minutes, 33 seconds
+[INFO 16:40:51] my_main Recent Stats | t_env:      80144 | Episode:     2172
+battle_won_mean:           0.0000	ep_length_mean:           44.9899	epsilon:                   0.0500	grad_norm:                 0.0979
+loss:                      0.0008	q_taken_mean:              0.0111	return_mean:               4.6774	return_std:                1.6671
+target_mean:               0.0114	td_error_abs:              0.0203	test_battle_won_mean:      0.0000	test_ep_length_mean:      50.3000
+test_return_mean:          4.7214	test_return_std:           1.9514	
+[INFO 16:42:28] my_main Updated target network
+[INFO 16:52:46] my_main t_env: 90185 / 2050000
+[INFO 16:52:46] my_main Estimated time left: 1 days, 16 hours, 19 minutes, 48 seconds. Time passed: 1 hours, 36 minutes, 57 seconds
+[INFO 16:53:16] my_main Recent Stats | t_env:      90185 | Episode:     2378
+battle_won_mean:           0.0000	ep_length_mean:           48.4967	epsilon:                   0.0500	grad_norm:                 0.0926
+loss:                      0.0007	q_taken_mean:              0.0114	return_mean:               4.7417	return_std:                1.6286
+target_mean:               0.0115	td_error_abs:              0.0192	test_battle_won_mean:      0.0000	test_ep_length_mean:      52.5312
+test_return_mean:          4.6834	test_return_std:           1.6323	
+[INFO 16:54:38] my_main Updated target network
+[INFO 17:03:31] my_main t_env: 100266 / 2050000
+[INFO 17:03:31] my_main Estimated time left: 1 days, 10 hours, 40 minutes, 2 seconds. Time passed: 1 hours, 47 minutes, 42 seconds
+[INFO 17:04:02] my_main Recent Stats | t_env:     100266 | Episode:     2546
+battle_won_mean:           0.0000	ep_length_mean:           51.1063	epsilon:                   0.0500	grad_norm:                 0.0712
+loss:                      0.0005	q_taken_mean:              0.0115	return_mean:               4.9470	return_std:                1.6189
+target_mean:               0.0113	td_error_abs:              0.0169	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.0063
+test_return_mean:          4.7878	test_return_std:           1.5884	
+[INFO 17:07:36] my_main Updated target network
+[INFO 17:16:19] my_main t_env: 110281 / 2050000
+[INFO 17:16:19] my_main Estimated time left: 1 days, 17 hours, 18 minutes, 33 seconds. Time passed: 2 hours, 30 seconds
+[INFO 17:16:48] my_main Recent Stats | t_env:     110281 | Episode:     2743
+battle_won_mean:           0.0000	ep_length_mean:           51.7819	epsilon:                   0.0500	grad_norm:                 0.0581
+loss:                      0.0004	q_taken_mean:              0.0112	return_mean:               5.0249	return_std:                1.5621
+target_mean:               0.0109	td_error_abs:              0.0159	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.3625
+test_return_mean:          4.5230	test_return_std:           1.4235	
+RequestQuit command received.
+Closing Application...
+unable to parse websocket frame.
+[INFO 17:18:33] absl Shutdown gracefully.
+[INFO 17:18:33] absl Shutdown with return code: -15
+[INFO 17:18:34] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 24685 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-v2eeyum5/ -eglpath libEGL.so.1
+[INFO 17:18:35] absl Connecting to: ws://127.0.0.1:24685/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 24685 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-v2eeyum5/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 17:18:36] absl Connecting to: ws://127.0.0.1:24685/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:24685
+Startup Phase 3 complete. Ready for commands.
+[INFO 17:18:37] absl Connecting to: ws://127.0.0.1:24685/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+[INFO 17:20:40] my_main Updated target network
+[INFO 17:31:20] my_main t_env: 120305 / 2050000
+[INFO 17:31:20] my_main Estimated time left: 2 days, 11 minutes, 43 seconds. Time passed: 2 hours, 15 minutes, 31 seconds
+[INFO 17:31:52] my_main Recent Stats | t_env:     120305 | Episode:     2971
+battle_won_mean:           0.0000	ep_length_mean:           50.9892	epsilon:                   0.0500	grad_norm:                 0.0567
+loss:                      0.0004	q_taken_mean:              0.0101	return_mean:               4.6155	return_std:                1.3867
+target_mean:               0.0102	td_error_abs:              0.0154	test_battle_won_mean:      0.0000	test_ep_length_mean:      50.4438
+test_return_mean:          4.3078	test_return_std:           1.3334	
+[INFO 17:33:47] my_main Updated target network
+[INFO 17:44:35] my_main t_env: 130328 / 2050000
+[INFO 17:44:35] my_main Estimated time left: 1 days, 18 hours, 17 minutes, 29 seconds. Time passed: 2 hours, 28 minutes, 46 seconds
+[INFO 17:45:06] my_main Recent Stats | t_env:     130328 | Episode:     3172
+battle_won_mean:           0.0000	ep_length_mean:           50.6834	epsilon:                   0.0500	grad_norm:                 0.0736
+loss:                      0.0006	q_taken_mean:              0.0099	return_mean:               4.5482	return_std:                1.4030
+target_mean:               0.0101	td_error_abs:              0.0178	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.7313
+test_return_mean:          4.6172	test_return_std:           1.3050	
+[INFO 17:46:55] my_main Updated target network
+[INFO 17:57:30] my_main t_env: 140331 / 2050000
+[INFO 17:57:30] my_main Estimated time left: 1 days, 17 hours, 4 minutes, 31 seconds. Time passed: 2 hours, 41 minutes, 41 seconds
+[INFO 17:57:59] my_main Recent Stats | t_env:     140331 | Episode:     3366
+battle_won_mean:           0.0000	ep_length_mean:           51.2472	epsilon:                   0.0500	grad_norm:                 0.0608
+loss:                      0.0005	q_taken_mean:              0.0095	return_mean:               4.5643	return_std:                1.3943
+target_mean:               0.0098	td_error_abs:              0.0166	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.0063
+test_return_mean:          4.7467	test_return_std:           1.2756	
+[INFO 18:00:12] my_main Updated target network
+[INFO 18:10:27] my_main t_env: 150423 / 2050000
+[INFO 18:10:27] my_main Estimated time left: 1 days, 16 hours, 37 minutes, 40 seconds. Time passed: 2 hours, 54 minutes, 38 seconds
+[INFO 18:11:00] my_main Recent Stats | t_env:     150423 | Episode:     3567
+battle_won_mean:           0.0000	ep_length_mean:           49.2878	epsilon:                   0.0500	grad_norm:                 0.0568
+loss:                      0.0005	q_taken_mean:              0.0093	return_mean:               4.4317	return_std:                1.3472
+target_mean:               0.0097	td_error_abs:              0.0158	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.6688
+test_return_mean:          4.4547	test_return_std:           1.1330	
+[INFO 18:13:09] my_main Updated target network
+[INFO 18:22:25] my_main t_env: 160560 / 2050000
+[INFO 18:22:25] my_main Estimated time left: 1 days, 13 hours, 12 minutes, 13 seconds. Time passed: 3 hours, 6 minutes, 37 seconds
+[INFO 18:22:58] my_main Recent Stats | t_env:     160560 | Episode:     3743
+battle_won_mean:           0.0000	ep_length_mean:           50.6396	epsilon:                   0.0500	grad_norm:                 0.0628
+loss:                      0.0005	q_taken_mean:              0.0093	return_mean:               4.3985	return_std:                1.3058
+target_mean:               0.0096	td_error_abs:              0.0156	test_battle_won_mean:      0.0000	test_ep_length_mean:      54.4937
+test_return_mean:          4.5954	test_return_std:           1.1580	
+[INFO 18:26:42] my_main Updated target network
+RequestQuit command received.
+Closing Application...
+unable to parse websocket frame.
+[INFO 18:31:24] absl Shutdown gracefully.
+[INFO 18:31:24] absl Shutdown with return code: -15
+[INFO 18:31:25] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 22686 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-cegsymq6/ -eglpath libEGL.so.1
+[INFO 18:31:26] absl Connecting to: ws://127.0.0.1:22686/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 22686 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-cegsymq6/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 18:31:27] absl Connecting to: ws://127.0.0.1:22686/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:22686
+Startup Phase 3 complete. Ready for commands.
+[INFO 18:31:28] absl Connecting to: ws://127.0.0.1:22686/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+[INFO 18:34:25] my_main t_env: 170564 / 2050000
+[INFO 18:34:25] my_main Estimated time left: 1 days, 13 hours, 33 minutes, 21 seconds. Time passed: 3 hours, 18 minutes, 36 seconds
+[INFO 18:35:02] my_main Recent Stats | t_env:     170564 | Episode:     3916
+battle_won_mean:           0.0000	ep_length_mean:           53.4119	epsilon:                   0.0500	grad_norm:                 0.0414
+loss:                      0.0004	q_taken_mean:              0.0097	return_mean:               4.7068	return_std:                1.3394
+target_mean:               0.0099	td_error_abs:              0.0137	test_battle_won_mean:      0.0000	test_ep_length_mean:      59.3250
+test_return_mean:          5.1213	test_return_std:           1.1834	
+[INFO 18:40:39] my_main Updated target network
+[INFO 18:45:23] my_main t_env: 180597 / 2050000
+[INFO 18:45:23] my_main Estimated time left: 1 days, 10 hours, 2 minutes, 22 seconds. Time passed: 3 hours, 29 minutes, 34 seconds
+[INFO 18:45:57] my_main Recent Stats | t_env:     180597 | Episode:     4074
+battle_won_mean:           0.0000	ep_length_mean:           56.1388	epsilon:                   0.0500	grad_norm:                 0.0315
+loss:                      0.0003	q_taken_mean:              0.0097	return_mean:               5.1375	return_std:                1.2797
+target_mean:               0.0095	td_error_abs:              0.0118	test_battle_won_mean:      0.0000	test_ep_length_mean:      61.6375
+test_return_mean:          5.3794	test_return_std:           1.2241	
+[INFO 18:54:33] my_main Updated target network
+[INFO 18:56:48] my_main t_env: 190702 / 2050000
+[INFO 18:56:48] my_main Estimated time left: 1 days, 11 hours, 1 minutes, 22 seconds. Time passed: 3 hours, 40 minutes, 59 seconds
+[INFO 18:57:17] my_main Recent Stats | t_env:     190702 | Episode:     4235
+battle_won_mean:           0.0000	ep_length_mean:           58.3792	epsilon:                   0.0500	grad_norm:                 0.0309
+loss:                      0.0003	q_taken_mean:              0.0092	return_mean:               5.6361	return_std:                1.2718
+target_mean:               0.0090	td_error_abs:              0.0115	test_battle_won_mean:      0.0000	test_ep_length_mean:      62.5875
+test_return_mean:          5.9729	test_return_std:           1.2453	
+[INFO 19:08:26] my_main Updated target network
+[INFO 19:10:23] my_main t_env: 200703 / 2050000
+[INFO 19:10:23] my_main Estimated time left: 1 days, 17 hours, 52 minutes, 2 seconds. Time passed: 3 hours, 54 minutes, 34 seconds
+[INFO 19:10:51] my_main Recent Stats | t_env:     200703 | Episode:     4430
+battle_won_mean:           0.0000	ep_length_mean:           58.5949	epsilon:                   0.0500	grad_norm:                 0.0320
+loss:                      0.0002	q_taken_mean:              0.0086	return_mean:               6.1865	return_std:                1.2574
+target_mean:               0.0085	td_error_abs:              0.0110	test_battle_won_mean:      0.0000	test_ep_length_mean:      60.7188
+test_return_mean:          6.6876	test_return_std:           1.3305	
+[INFO 19:22:04] my_main t_env: 210726 / 2050000
+[INFO 19:22:04] my_main Estimated time left: 1 days, 11 hours, 44 minutes, 18 seconds. Time passed: 4 hours, 6 minutes, 15 seconds
+[INFO 19:22:34] my_main Recent Stats | t_env:     210726 | Episode:     4597
+battle_won_mean:           0.0000	ep_length_mean:           59.0791	epsilon:                   0.0500	grad_norm:                 0.0338
+loss:                      0.0002	q_taken_mean:              0.0081	return_mean:               6.6322	return_std:                1.2837
+target_mean:               0.0081	td_error_abs:              0.0110	test_battle_won_mean:      0.0000	test_ep_length_mean:      60.0500
+test_return_mean:          7.3240	test_return_std:           1.2867	
+[INFO 19:22:49] my_main Updated target network
+[INFO 19:35:58] my_main Updated target network
+[INFO 19:37:26] my_main t_env: 220763 / 2050000
+[INFO 19:37:26] my_main Estimated time left: 1 days, 22 hours, 40 minutes, 9 seconds. Time passed: 4 hours, 21 minutes, 37 seconds
+[INFO 19:37:54] my_main Recent Stats | t_env:     220763 | Episode:     4823
+battle_won_mean:           0.0000	ep_length_mean:           56.3961	epsilon:                   0.0500	grad_norm:                 0.0354
+loss:                      0.0002	q_taken_mean:              0.0078	return_mean:               7.2892	return_std:                1.3323
+target_mean:               0.0078	td_error_abs:              0.0105	test_battle_won_mean:      0.0000	test_ep_length_mean:      54.5688
+test_return_mean:          7.7263	test_return_std:           1.2865	
+RequestQuit command received.
+Closing Application...
+unable to parse websocket frame.
+[INFO 19:39:33] absl Shutdown gracefully.
+[INFO 19:39:33] absl Shutdown with return code: -15
+[INFO 19:39:34] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 21270 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-1bpdc2o6/ -eglpath libEGL.so.1
+[INFO 19:39:35] absl Connecting to: ws://127.0.0.1:21270/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 21270 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-1bpdc2o6/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 19:39:36] absl Connecting to: ws://127.0.0.1:21270/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:21270
+Startup Phase 3 complete. Ready for commands.
+[INFO 19:39:37] absl Connecting to: ws://127.0.0.1:21270/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+[INFO 19:49:35] my_main Updated target network
+[INFO 19:52:20] my_main t_env: 230777 / 2050000
+[INFO 19:52:20] my_main Estimated time left: 1 days, 21 hours, 6 minutes, 9 seconds. Time passed: 4 hours, 36 minutes, 31 seconds
+[INFO 19:52:47] my_main Recent Stats | t_env:     230777 | Episode:     5044
+battle_won_mean:           0.0000	ep_length_mean:           52.7586	epsilon:                   0.0500	grad_norm:                 0.0155
+loss:                      0.0002	q_taken_mean:              0.0078	return_mean:               7.6266	return_std:                1.4182
+target_mean:               0.0079	td_error_abs:              0.0084	test_battle_won_mean:      0.0000	test_ep_length_mean:      50.8875
+test_return_mean:          8.5358	test_return_std:           1.4015	
+[INFO 20:03:12] my_main Updated target network
+[INFO 20:07:40] my_main t_env: 240799 / 2050000
+[INFO 20:07:40] my_main Estimated time left: 1 days, 22 hours, 10 minutes, 3 seconds. Time passed: 4 hours, 51 minutes, 52 seconds
+[INFO 20:08:10] my_main Recent Stats | t_env:     240799 | Episode:     5267
+battle_won_mean:           0.0000	ep_length_mean:           49.1941	epsilon:                   0.0500	grad_norm:                 0.0185
+loss:                      0.0001	q_taken_mean:              0.0074	return_mean:               8.2000	return_std:                1.5685
+target_mean:               0.0076	td_error_abs:              0.0082	test_battle_won_mean:      0.0000	test_ep_length_mean:      51.2125
+test_return_mean:          9.1509	test_return_std:           1.5546	
+[INFO 20:17:28] my_main Updated target network
+[INFO 20:18:28] my_main t_env: 250928 / 2050000
+[INFO 20:18:28] my_main Estimated time left: 1 days, 7 hours, 57 minutes, 57 seconds. Time passed: 5 hours, 2 minutes, 40 seconds
+[INFO 20:19:05] my_main Recent Stats | t_env:     250928 | Episode:     5415
+battle_won_mean:           0.0000	ep_length_mean:           52.6245	epsilon:                   0.0500	grad_norm:                 0.1084
+loss:                      0.0017	q_taken_mean:              0.0068	return_mean:               8.8628	return_std:                1.7029
+target_mean:               0.0075	td_error_abs:              0.0220	test_battle_won_mean:      0.0000	test_ep_length_mean:      57.7250
+test_return_mean:         10.0476	test_return_std:           1.6545	
+[INFO 20:28:57] my_main t_env: 260979 / 2050000
+[INFO 20:28:57] my_main Estimated time left: 1 days, 7 hours, 6 minutes, 41 seconds. Time passed: 5 hours, 13 minutes, 9 seconds
+[INFO 20:29:37] my_main Recent Stats | t_env:     260979 | Episode:     5552
+battle_won_mean:           0.0000	ep_length_mean:           55.2939	epsilon:                   0.0500	grad_norm:                 0.1012
+loss:                      0.0017	q_taken_mean:              0.0072	return_mean:               9.5130	return_std:                1.7962
+target_mean:               0.0079	td_error_abs:              0.0215	test_battle_won_mean:      0.0000	test_ep_length_mean:      64.2750
+test_return_mean:         10.5039	test_return_std:           1.7349	
+[INFO 20:33:02] my_main Updated target network
+[INFO 20:39:44] my_main t_env: 271009 / 2050000
+[INFO 20:39:44] my_main Estimated time left: 1 days, 7 hours, 50 minutes, 15 seconds. Time passed: 5 hours, 23 minutes, 55 seconds
+[INFO 20:40:17] my_main Recent Stats | t_env:     271009 | Episode:     5691
+battle_won_mean:           0.0000	ep_length_mean:           60.8433	epsilon:                   0.0500	grad_norm:                 0.0993
+loss:                      0.0017	q_taken_mean:              0.0072	return_mean:               9.6231	return_std:                1.8207
+target_mean:               0.0078	td_error_abs:              0.0214	test_battle_won_mean:      0.0000	test_ep_length_mean:      66.9313
+test_return_mean:         10.2002	test_return_std:           1.7798	
+RequestQuit command received.
+Closing Application...
+unable to parse websocket frame.
+[INFO 20:46:44] absl Shutdown gracefully.
+[INFO 20:46:44] absl Shutdown with return code: -15
+[INFO 20:46:45] absl Launching SC2: /pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64 -listen 127.0.0.1 -port 16715 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-nofyjuyl/ -eglpath libEGL.so.1
+[INFO 20:46:46] absl Connecting to: ws://127.0.0.1:16715/sc2api, attempt: 0, running: True
+Version: B69232 (SC2.4.6-Publish)
+Build: Oct 23 2018 01:43:04
+Command Line: '"/pymarl/3rdparty/StarCraftII/Versions/Base69232/SC2_x64" -listen 127.0.0.1 -port 16715 -dataDir /pymarl/3rdparty/StarCraftII/ -tempDir /tmp/sc-nofyjuyl/ -eglpath libEGL.so.1'
+Starting up...
+Startup Phase 1 complete
+[INFO 20:46:47] absl Connecting to: ws://127.0.0.1:16715/sc2api, attempt: 1, running: True
+Startup Phase 2 complete
+Attempting to initialize EGL from file libEGL.so.1 ...
+Failed to find EGL functions in library file!
+Creating stub renderer...
+Listening on: 127.0.0.1:16715
+Startup Phase 3 complete. Ready for commands.
+[INFO 20:46:48] absl Connecting to: ws://127.0.0.1:16715/sc2api, attempt: 2, running: True
+Requesting to join a single player game
+Configuring interface options
+Configure: raw interface enabled
+Configure: feature layer interface disabled
+Configure: score interface disabled
+Configure: render interface disabled
+Entering load game phase.
+Launching next game.
+Next launch phase started: 2
+Next launch phase started: 3
+Next launch phase started: 4
+Next launch phase started: 5
+Next launch phase started: 6
+Next launch phase started: 7
+Next launch phase started: 8
+Game has started.
+Sending ResponseJoinGame
+[INFO 20:48:19] my_main Updated target network
+[INFO 20:51:57] my_main t_env: 281014 / 2050000
+[INFO 20:51:57] my_main Estimated time left: 1 days, 12 hours, 1 minutes, 42 seconds. Time passed: 5 hours, 36 minutes, 9 seconds
+[INFO 20:52:34] my_main Recent Stats | t_env:     281014 | Episode:     5853
+battle_won_mean:           0.0000	ep_length_mean:           64.1327	epsilon:                   0.0500	grad_norm:                 0.0994
+loss:                      0.0017	q_taken_mean:              0.0072	return_mean:               9.3720	return_std:                1.8547
+target_mean:               0.0078	td_error_abs:              0.0215	test_battle_won_mean:      0.0000	test_ep_length_mean:      73.4375
+test_return_mean:          9.9356	test_return_std:           1.7200	
+[INFO 21:02:28] my_main t_env: 291059 / 2050000
+[INFO 21:02:28] my_main Estimated time left: 1 days, 6 hours, 41 minutes, 5 seconds. Time passed: 5 hours, 46 minutes, 39 seconds
+[INFO 21:03:06] my_main Recent Stats | t_env:     291059 | Episode:     5988
+battle_won_mean:           0.0000	ep_length_mean:           70.0258	epsilon:                   0.0500	grad_norm:                 0.1080
+loss:                      0.0017	q_taken_mean:              0.0074	return_mean:               9.1476	return_std:                1.7964
+target_mean:               0.0080	td_error_abs:              0.0226	test_battle_won_mean:      0.0000	test_ep_length_mean:      78.9875
+test_return_mean:          9.7521	test_return_std:           1.6252	
+[INFO 21:04:06] my_main Updated target network
+[INFO 21:12:42] my_main t_env: 301208 / 2050000
+[INFO 21:12:42] my_main Estimated time left: 1 days, 5 hours, 23 minutes, 44 seconds. Time passed: 5 hours, 56 minutes, 54 seconds
+[INFO 21:13:22] my_main Recent Stats | t_env:     301208 | Episode:     6117
+battle_won_mean:           0.0000	ep_length_mean:           72.0729	epsilon:                   0.0500	grad_norm:                 0.0146
+loss:                      0.0001	q_taken_mean:              0.0079	return_mean:               9.0124	return_std:                1.6999
+target_mean:               0.0078	td_error_abs:              0.0085	test_battle_won_mean:      0.0000	test_ep_length_mean:      80.7500
+test_return_mean:          9.4287	test_return_std:           1.5398	
+[INFO 21:19:33] my_main Updated target network
+[INFO 21:22:59] my_main t_env: 311337 / 2050000
+[INFO 21:22:59] my_main Estimated time left: 1 days, 5 hours, 23 minutes, 20 seconds. Time passed: 6 hours, 7 minutes, 10 seconds
