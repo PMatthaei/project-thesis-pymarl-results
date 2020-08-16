@@ -1,0 +1,78 @@
+{
+  "artifacts": [],
+  "command": "my_main",
+  "experiment": {
+    "base_dir": "/pymarl/src",
+    "dependencies": [
+      "munch==2.5.1.dev12",
+      "numpy==1.18.5",
+      "PyYAML==5.3.1",
+      "sacred==0.7.2",
+      "torch==1.5.1"
+    ],
+    "mainfile": "main.py",
+    "name": "pymarl",
+    "repositories": [],
+    "sources": [
+      [
+        "main.py",
+        "_sources/main_63d7d00072f4e5be0310acb11aa60581.py"
+      ],
+      [
+        "run.py",
+        "_sources/run_75b4e4a81fa0c20369072b33acf9d2db.py"
+      ],
+      [
+        "utils/logging.py",
+        "_sources/logging_aa14e56e60b01dd7a9ddb8e6cdf36b85.py"
+      ]
+    ]
+  },
+  "heartbeat": "2020-08-15T09:08:30.678995",
+  "host": {
+    "ENV": {},
+    "cpu": "Common KVM processor",
+    "hostname": "6e0c2967c628",
+    "os": [
+      "Linux",
+      "Linux-5.4.0-40-generic-x86_64-with-Ubuntu-16.04-xenial"
+    ],
+    "python_version": "3.5.2"
+  },
+  "meta": {
+    "command": "my_main",
+    "options": {
+      "--beat_interval": null,
+      "--capture": null,
+      "--comment": null,
+      "--debug": false,
+      "--enforce_clean": false,
+      "--file_storage": null,
+      "--force": false,
+      "--help": false,
+      "--loglevel": null,
+      "--mongo_db": null,
+      "--name": null,
+      "--pdb": false,
+      "--print_config": false,
+      "--priority": null,
+      "--queue": false,
+      "--sql": null,
+      "--tiny_db": null,
+      "--unobserved": false,
+      "COMMAND": null,
+      "UPDATE": [
+        "env_args.map_name=8m",
+        "env_args.reward_local=True",
+        "env_args.combine_rewards=True",
+        "save_model=True"
+      ],
+      "help": false,
+      "with": true
+    }
+  },
+  "resources": [],
+  "result": null,
+  "start_time": "2020-08-14T14:15:43.374172",
+  "status": "RUNNING"
+}
