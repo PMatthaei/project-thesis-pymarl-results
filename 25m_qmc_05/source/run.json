@@ -28,22 +28,11 @@
       ]
     ]
   },
-  "fail_trace": [
-    "Traceback (most recent call last):\n",
-    "  File \"/usr/local/lib/python3.5/dist-packages/sacred-0.7.2-py3.5.egg/sacred/config/captured_function.py\", line 48, in captured_function\n    result = wrapped(*args, **kwargs)\n",
-    "  File \"src/main.py\", line 35, in my_main\n    run(_run, config, _log)\n",
-    "  File \"/pymarl/src/run.py\", line 48, in run\n    run_sequential(args=args, logger=logger)\n",
-    "  File \"/pymarl/src/run.py\", line 209, in run_sequential\n    runner.run(test_mode=True)\n",
-    "  File \"/pymarl/src/runners/episode_runner.py\", line 73, in run\n    rewards, terminated, env_info = self.env.step(actions[0])\n",
-    "  File \"/pymarl/src/envs/combined_rewards_smac.py\", line 235, in step\n    .format(diff).center(60, '-'))\n",
-    "  File \"/usr/local/lib/python3.5/dist-packages/numpy/testing/_private/utils.py\", line 601, in assert_almost_equal\n    raise AssertionError(_build_err_msg())\n",
-    "AssertionError: \nArrays are not almost equal to 10 decimals\nGlobal reward and local reward mean should be equal. Difference = 2.438095238095238\n ACTUAL: 2.5462857142857143\n DESIRED: 0.1081904761904762\n"
-  ],
-  "heartbeat": "2020-08-10T21:23:08.202163",
+  "heartbeat": "2020-08-18T09:41:58.715220",
   "host": {
     "ENV": {},
     "cpu": "Common KVM processor",
-    "hostname": "a9cd6cd5636e",
+    "hostname": "41350065dada",
     "os": [
       "Linux",
       "Linux-5.4.0-40-generic-x86_64-with-Ubuntu-16.04-xenial"
@@ -75,7 +64,7 @@
       "UPDATE": [
         "env_args.map_name=25m",
         "env_args.reward_local=True",
-        "env_args.reward_local_weighted=True",
+        "env_args.combine_rewards=True",
         "save_model=True"
       ],
       "help": false,
@@ -84,7 +73,6 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2020-08-10T15:15:40.523424",
-  "status": "FAILED",
-  "stop_time": "2020-08-10T21:23:08.238731"
+  "start_time": "2020-08-16T08:24:18.055652",
+  "status": "RUNNING"
 }
