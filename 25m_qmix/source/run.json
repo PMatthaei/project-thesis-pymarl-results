@@ -28,11 +28,11 @@
       ]
     ]
   },
-  "heartbeat": "2020-08-07T12:11:56.574716",
+  "heartbeat": "2020-09-18T02:50:29.323354",
   "host": {
     "ENV": {},
     "cpu": "Common KVM processor",
-    "hostname": "906845e0ae3b",
+    "hostname": "82ffc27c3853",
     "os": [
       "Linux",
       "Linux-5.4.0-40-generic-x86_64-with-Ubuntu-16.04-xenial"
@@ -64,8 +64,9 @@
       "UPDATE": [
         "env_args.map_name=25m",
         "env_args.reward_local=False",
-        "env_args.reward_local_weighted=False",
-        "save_model=True"
+        "env_args.combine_rewards=False",
+        "save_model=True",
+        "env_args.local_reward_weight=0"
       ],
       "help": false,
       "with": true
@@ -73,6 +74,6 @@
   },
   "resources": [],
   "result": null,
-  "start_time": "2020-08-05T19:23:28.536324",
+  "start_time": "2020-09-16T22:23:34.878424",
   "status": "RUNNING"
 }
